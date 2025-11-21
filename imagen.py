@@ -54,14 +54,17 @@ if st.button("Generate Image") and prompt.strip():
             except (FileNotFoundError, json.JSONDecodeError):
                 gallery_data = {"images": []}
 
+            # Clean up prompt: normalize whitespace, remove extra newlines
+            clean_prompt = " ".join(prompt.split())
+
             gallery_data["images"].insert(0, {
                 "image": f"images/{image_filename}",
-                "prompt": prompt,
+                "prompt": clean_prompt,
                 "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             })
 
             with open(gallery_path, "w") as f:
-                json.dump(gallery_data, f, indent=2)
+                json.dump(gallery_data, f, indent=2, ensure_ascii=False)
 
             # Show in streamlit - use the PIL Image object
             st.image(img, caption=f"Saved as {image_path}")
