@@ -130,17 +130,35 @@
                     const card = document.createElement('div');
                     card.className = 'card';
 
-                    card.innerHTML = `
-                        <img src="${item.image}" alt="${item.prompt}">
-                        <div class="card-content">
-                            <p class="prompt">${item.prompt}</p>
-                            <div class="metadata">
-                                <span>${item.timestamp}</span>
-                                <a href="${item.image}" download class="download-btn">Download</a>
-                            </div>
-                        </div>
-                    `;
+                    const img = document.createElement('img');
+                    img.src = item.image;
+                    img.alt = item.prompt;
 
+                    const cardContent = document.createElement('div');
+                    cardContent.className = 'card-content';
+
+                    const promptP = document.createElement('p');
+                    promptP.className = 'prompt';
+                    promptP.textContent = item.prompt;
+
+                    const metadata = document.createElement('div');
+                    metadata.className = 'metadata';
+
+                    const timestamp = document.createElement('span');
+                    timestamp.textContent = item.timestamp;
+
+                    const downloadBtn = document.createElement('a');
+                    downloadBtn.href = item.image;
+                    downloadBtn.download = '';
+                    downloadBtn.className = 'download-btn';
+                    downloadBtn.textContent = 'Download';
+
+                    metadata.appendChild(timestamp);
+                    metadata.appendChild(downloadBtn);
+                    cardContent.appendChild(promptP);
+                    cardContent.appendChild(metadata);
+                    card.appendChild(img);
+                    card.appendChild(cardContent);
                     gallery.appendChild(card);
                 });
             } catch (error) {
