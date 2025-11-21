@@ -4,6 +4,16 @@
       "image": "images/20251121_104200_emulator.png",
       "prompt": "Design a split-panel infographic.\nLeft side: \"Traditional Physics-Based Model (WRF–CAMx)\" with visuals of differential equations, 3D atmosphere grid, CPU clusters, slow runtime indicators.\nRight side: \"Neural Emulator\" with a neural network diagram, GPUs, fast inference, real-time forecasting.\nInclude inputs: emissions, meteorology, topography, and outputs: PM2.5 concentration maps.\nUse bold colors and clean icons.",
       "timestamp": "2025-11-21 10:42:00"
+    },
+    {
+      "image": "images/20251121_102800_imagery-type.png",
+      "prompt": "Generate an infographic explaining differences between natural RGB imagery; thermal imagery; and charts; esp. from perspective of say VLMs",
+      "timestamp": "2025-11-21 10:28:00"
+    },
+    {
+      "image": "images/20251121_102400_pm25-stations.png",
+      "prompt": "Generate an infographic of PM2.5 continuous monitoring stations in India",
+      "timestamp": "2025-11-21 10:24:00"
     }
   ]
 }
