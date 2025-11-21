@@ -131,9 +131,20 @@
                     const card = document.createElement('div');
                     card.className = 'card';
 
+                    // Create clickable link to full-res image
+                    const imgLink = document.createElement('a');
+                    imgLink.href = item.image;
+                    imgLink.target = '_blank';
+                    imgLink.style.cursor = 'zoom-in';
+
                     const img = document.createElement('img');
-                    img.src = item.image;
+                    // Use thumbnail if available, fallback to full image
+                    const thumbnailPath = item.image.replace('images/', 'images/thumbnails/');
+                    img.src = thumbnailPath;
+                    img.onerror = function() { this.src = item.image; };
                     img.alt = item.prompt;
+
+                    imgLink.appendChild(img);
 
                     const cardContent = document.createElement('div');
                     cardContent.className = 'card-content';
@@ -158,7 +169,7 @@
                     metadata.appendChild(downloadBtn);
                     cardContent.appendChild(promptP);
                     cardContent.appendChild(metadata);
-                    card.appendChild(img);
+                    card.appendChild(imgLink);
                     card.appendChild(cardContent);
                     gallery.appendChild(card);
                 });
