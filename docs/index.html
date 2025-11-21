@@ -141,7 +141,10 @@
                     // Use thumbnail if available, fallback to full image
                     const thumbnailPath = item.image.replace('images/', 'images/thumbnails/');
                     img.src = thumbnailPath;
-                    img.onerror = function() { this.src = item.image; };
+                    img.onerror = function(e) {
+                        e.stopPropagation();
+                        this.src = item.image;
+                    };
                     img.alt = item.prompt;
 
                     imgLink.appendChild(img);
@@ -174,7 +177,9 @@
                     gallery.appendChild(card);
                 });
             } catch (error) {
+                console.error('Gallery loading error:', error);
                 document.getElementById('empty-state').style.display = 'block';
+                document.querySelector('.empty-state p').textContent = 'Error loading gallery: ' + error.message;
             }
         }
 
