@@ -1,8 +1,13 @@
 {
   "images": [
     {
+      "image": "images/20251121_113004_brick-kiln.png",
+      "prompt": "Create an infographic explaining brick kiln detection: Sentinel-2 RGB bands \u2192 preprocessing \u2192 deep model \u2192 oriented bounding boxes \u2192 compliance map. Use earthy palette and real satellite textures.\n",
+      "timestamp": "2025-11-21 11:30:05"
+    },
+    {
       "image": "images/20251121_104200_emulator.png",
-      "prompt": "Design a split-panel infographic.\nLeft side: \"Traditional Physics-Based Model (WRF–CAMx)\" with visuals of differential equations, 3D atmosphere grid, CPU clusters, slow runtime indicators.\nRight side: \"Neural Emulator\" with a neural network diagram, GPUs, fast inference, real-time forecasting.\nInclude inputs: emissions, meteorology, topography, and outputs: PM2.5 concentration maps.\nUse bold colors and clean icons.",
+      "prompt": "Design a split-panel infographic.\nLeft side: \"Traditional Physics-Based Model (WRF\u2013CAMx)\" with visuals of differential equations, 3D atmosphere grid, CPU clusters, slow runtime indicators.\nRight side: \"Neural Emulator\" with a neural network diagram, GPUs, fast inference, real-time forecasting.\nInclude inputs: emissions, meteorology, topography, and outputs: PM2.5 concentration maps.\nUse bold colors and clean icons.",
       "timestamp": "2025-11-21 10:42:00"
     },
     {
